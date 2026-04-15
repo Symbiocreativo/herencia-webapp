@@ -15,82 +15,107 @@ type TimelineItem = {
 const objective = "Cobrar el depósito a plazo lo antes posible.";
 
 const executiveSummary =
-  "Este frente requiere aclarar observaciones, ordenar documentos y precisar la traba exacta del proceso para avanzar hacia el cobro.";
+  "Este frente busca cobrar los depósitos a plazo e instrumentos asociados de Sigfried Pohlhammer ante Banco Santander. Hoy el proceso está detenido porque el banco observó falta de antecedentes formales, incluyendo posesión efectiva, inventario protocolizado e inconsistencias de identificación del causante. La prioridad es aclarar exactamente qué falta, consolidar los documentos correctos y destrabar la revisión para avanzar al cobro.";
 
-const currentStatus = "Pendiente de respuesta";
+const currentStatus =
+  "En etapa de observación y subsanación de antecedentes ante Banco Santander.";
 
 const mainBlocker =
-  "Aún no está completamente claro qué observación, documento o validación falta para poder avanzar al cobro.";
+  "El banco no valida la solicitud porque faltan antecedentes formales del causante y de la sucesión, especialmente posesión efectiva, inventario protocolizado y corrección o validación de datos de identificación.";
 
 const nextStep =
-  "Consolidar requerimientos, documentos entregados y respuesta pendiente para identificar la traba exacta y definir la acción siguiente.";
+  "Consolidar los requerimientos exactos del banco y entregar o corregir los antecedentes pendientes, especialmente posesión efectiva válida, inventario protocolizado y datos de identificación del causante.";
 
 const collectionStatus: ChecklistSection = {
   title: "Estado del cobro",
   items: [
-    "Institución involucrada: entidad financiera por confirmar en la carpeta única del frente.",
-    "Estado del requerimiento: gestión iniciada y aún pendiente de una respuesta concreta que permita mover el proceso.",
-    "Respuesta pendiente: falta confirmación formal sobre observaciones, documentos o validaciones exigidas.",
-    "Punto exacto del proceso: el caso se encuentra detenido en la etapa de clarificación de requisitos previos al cobro.",
+    "Institución involucrada: Banco Santander.",
+    "Gestión liderada por: Christian.",
+    "Ejecutiva mencionada: Patricia Alejandra Carvajal Barrios.",
+    "Apoyo jurídico mencionado: Velasco Vidal Abogados y abogado Luis Gumucio.",
+    "Etapa actual: observaciones emitidas por el banco y proceso pendiente de subsanación.",
+    "Punto actual del proceso: revisión detenida hasta aclarar antecedentes de sucesión, herederos e identificación del causante.",
   ],
 };
 
 const requirements: ChecklistSection = {
   title: "Requerimientos / observaciones",
   items: [
-    "Observaciones recibidas: mensajes o indicaciones parciales que todavía no se han consolidado en una sola lista verificable.",
-    "Documentos pedidos: antecedentes de identidad, respaldo sucesorio y formularios específicos por confirmar contra la última comunicación.",
-    "Reparos pendientes: diferencias entre lo ya entregado y lo que la institución considera suficiente para habilitar el cobro.",
-    "Validaciones externas necesarias: revisión de titularidad, vigencia de documentos o validaciones notariales según lo que exija el proceso.",
+    "El banco indica que no puede validar correctamente antecedentes del causante por inconsistencia de RUT.",
+    "No figuran antecedentes suficientes de posesión efectiva.",
+    "No existe claridad suficiente sobre herederos.",
+    "No aparece inventario declarado o protocolizado.",
+    "Existen acreencias o instrumentos que el banco no puede confirmar todavía.",
+    "Se han pedido antecedentes como posesión efectiva, inventario protocolizado y otros respaldos formales.",
   ],
 };
 
 const availableDocuments = [
-  "Copia de comunicaciones previas con la institución o canal de atención.",
-  "Antecedentes base de identificación de quienes participan en la gestión.",
-  "Respaldo inicial de la posesión efectiva o documentos sucesorios disponibles.",
-  "Notas de seguimiento con observaciones y dudas levantadas hasta ahora.",
+  "Carpeta de antecedentes ya ingresada al banco.",
+  "Documento de aclaración enviado o preparado por abogado.",
+  "Respuesta u observaciones emitidas por el banco.",
 ];
 
 const missingDocuments = [
-  "Lista consolidada y confirmada de requisitos exigidos para autorizar el cobro.",
-  "Identificación exacta del documento, validación u observación que hoy mantiene el caso detenido.",
-  "Copia ordenada de formularios, certificados o respaldos que la institución haya pedido en su versión más actual.",
-  "Respuesta formal pendiente que confirme recepción conforme o detalle reparos específicos.",
+  "Posesión efectiva validada.",
+  "Inventario protocolizado.",
+  "Corrección o validación del RUT del causante.",
+  "Acreditación formal de herederos.",
+  "Confirmación exacta de los instrumentos o acreencias que el banco reconoce.",
 ];
 
 const timeline: TimelineItem[] = [
   {
-    period: "Hito 1",
-    title: "Inicio del frente de cobro",
+    period: "2018",
+    title: "Fallece Sigfried Pohlhammer",
     description:
-      "Se define que el depósito a plazo debe tratarse como un frente prioritario por su potencial de liquidación más directa.",
+      "Este hecho da origen al proceso sucesorio y a la necesidad de gestionar el cobro de depósitos a plazo e instrumentos asociados.",
   },
   {
-    period: "Hito 2",
-    title: "Primer levantamiento de antecedentes",
+    period: "Etapa inicial",
+    title: "Se inicia gestión de cobro ante Banco Santander",
     description:
-      "Se reúnen documentos iniciales y se registran comunicaciones para entender qué se ha pedido y qué ya fue enviado.",
+      "Comienza la revisión del caso ante el banco para intentar identificar y cobrar los instrumentos vinculados al causante.",
   },
   {
-    period: "Hito 3",
-    title: "Aparición de la traba operativa",
+    period: "28 enero 2026",
+    title: "Banco Santander emite observaciones o memo de reparo",
     description:
-      "El proceso queda detenido porque no está claro si falta un documento, una validación o una corrección específica.",
+      "El banco informa reparos vinculados a antecedentes de sucesión, herederos, inventario e identificación del causante.",
   },
   {
-    period: "Hito 4",
-    title: "Enfoque en destrabar",
+    period: "Seguimiento legal",
+    title: "Se realizan reuniones con abogado para revisar el caso",
     description:
-      "La etapa actual busca ordenar requerimientos, documentos y respuesta pendiente para definir la gestión siguiente con precisión.",
+      "Se revisa la estrategia de respuesta y la documentación necesaria para subsanar las observaciones emitidas por el banco.",
+  },
+  {
+    period: "Aproximadamente 5 abril 2026",
+    title: "Nueva reunión con abogado",
+    description:
+      "Alrededor de 10 días antes del 15 de abril de 2026 se vuelve a revisar el caso para precisar brechas documentales y definir respuesta.",
+  },
+  {
+    period: "Aproximadamente 13 abril 2026",
+    title: "Se envía documento de aclaración al banco",
+    description:
+      "Alrededor de 2 días antes del 15 de abril de 2026 se remite un documento de aclaración para intentar destrabar la revisión bancaria.",
+  },
+  {
+    period: "Estado actual",
+    title: "Pendiente de respuesta o validación posterior del banco",
+    description:
+      "El frente sigue abierto y detenido hasta que Banco Santander confirme qué parte fue aceptada y qué observaciones continúan vigentes.",
   },
 ];
 
 const openQuestions = [
-  "¿Cuál es la observación exacta que hoy impide pasar desde revisión a cobro?",
-  "¿Qué documentos ya fueron entregados y cuáles siguen faltando según la versión más reciente del caso?",
-  "¿La respuesta pendiente depende de revisión interna de la institución o de una validación externa adicional?",
-  "¿Cuál es la siguiente acción concreta una vez identificada la traba exacta: reenviar, complementar, rectificar o escalar?",
+  "¿Existe posesión efectiva formalmente aprobada y utilizable para este cobro?",
+  "¿El RUT del causante ya fue corregido o validado?",
+  "¿Existe inventario protocolizado o todavía falta hacerlo?",
+  "¿Qué observación exacta impide hoy avanzar al cobro?",
+  "¿Qué instrumentos reconoce efectivamente el banco dentro del caso?",
+  "¿Qué parte de los antecedentes ya fue aceptada y cuál sigue observada?",
 ];
 
 const pageStyles: Record<string, CSSProperties> = {
