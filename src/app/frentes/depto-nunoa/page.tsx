@@ -1,9 +1,14 @@
 ﻿import Link from "next/link";
 import type { CSSProperties } from "react";
 
-type ChecklistItem = {
-  title: string;
+type GroupedList = {
+  heading: string;
   items: string[];
+};
+
+type DetailCard = {
+  title: string;
+  groups: GroupedList[];
 };
 
 type TimelineItem = {
@@ -13,74 +18,121 @@ type TimelineItem = {
 };
 
 const executiveSummary =
-  "Este frente requiere ordenar antecedentes antes de tomar decisiones de venta. El foco inmediato es dejar una base clara de documentos, cronología y riesgos para avanzar con menor incertidumbre y con una posición más preparada ante un eventual reclamo por arriendos.";
+  "Departamento ubicado en Nunoa, perteneciente a la herencia de Sigfried. El objetivo principal es venderlo, pero antes hay que ordenar la situacion legal y alinear a los herederos. En paralelo, conviene preparar antecedentes para responder ante un eventual cobro retroactivo por uso del inmueble, ya que el uso ha sido informal y sin acuerdo escrito.";
 
-const salePreparation: ChecklistItem = {
-  title: "Preparación para venta",
-  items: [
-    "Posesión efectiva revisada y lista para apoyar la venta.",
-    "Acuerdo entre herederos sobre criterio de venta y distribución.",
-    "Estado material del departamento levantado con observaciones básicas.",
-    "Pendientes previos a venta identificados antes de contactar corredores o compradores.",
+const salePreparation: DetailCard = {
+  title: "Preparacion para venta",
+  groups: [
+    {
+      heading: "Antecedentes a favor",
+      items: [
+        "Departamento en excelente estado.",
+        "Gastos comunes al dia.",
+        "Contribuciones pagadas por tu padre.",
+        "Uso conocido por los herederos.",
+        "No ha existido oposicion expresa al uso.",
+      ],
+    },
+    {
+      heading: "Pendientes previos a venta",
+      items: [
+        "Confirmar situacion legal exacta del inmueble.",
+        "Confirmar si esta dentro de la posesion efectiva.",
+        "Alinear a los herederos respecto de la venta.",
+      ],
+    },
+    {
+      heading: "Obstaculos para vender",
+      items: [
+        "Multiples herederos.",
+        "Falta de acuerdos formales.",
+        "Posible aparicion de conflicto por uso o cobros.",
+      ],
+    },
   ],
 };
 
-const defensePreparation: ChecklistItem = {
+const defensePreparation: DetailCard = {
   title: "Riesgo de cobro retroactivo / defensa",
-  items: [
-    "Posibles reclamantes y vínculo con el uso previo del inmueble.",
-    "Base del eventual reclamo y período que podría discutirse.",
-    "Antecedentes a favor que ayuden a contextualizar ocupación, gastos o acuerdos.",
-    "Vacíos o dudas pendientes que requieren respaldo adicional.",
+  groups: [
+    {
+      heading: "Quien podria reclamar",
+      items: ["Cualquier heredero."],
+    },
+    {
+      heading: "Base posible del reclamo",
+      items: ["Uso exclusivo del inmueble por un heredero."],
+    },
+    {
+      heading: "Antecedentes a favor de la defensa",
+      items: [
+        "Uso conocido por todos.",
+        "No hubo oposicion.",
+        "No hubo acuerdo de arriendo.",
+        "Hubo mantencion del inmueble.",
+        "Hubo pago de gastos directos o indirectos.",
+        "Existe disposicion a dejar el inmueble.",
+      ],
+    },
+    {
+      heading: "Puntos debiles o vacios",
+      items: [
+        "No existe respaldo formal del acuerdo.",
+        "No hay documento que regule el uso.",
+        "No esta clara la situacion legal completa del bien.",
+      ],
+    },
   ],
 };
 
 const timeline: TimelineItem[] = [
   {
-    period: "Hito 1",
-    title: "Inicio del ordenamiento del frente",
+    period: "2018",
+    title: "Fallece Sigfried",
     description:
-      "Se define que el departamento debe revisarse con foco en venta y en resguardo de antecedentes relevantes.",
+      "Se abre el contexto sucesorio del que depende la situacion actual del departamento de Nunoa.",
   },
   {
-    period: "Hito 2",
-    title: "Levantamiento preliminar de documentos",
+    period: "Hace aproximadamente 7 anos",
+    title: "Comienzas a vivir en el departamento",
     description:
-      "Se identifican papeles disponibles y se detectan brechas para construir una carpeta base más completa.",
+      "El uso del inmueble se inicia de manera informal y sin acuerdo escrito entre herederos.",
   },
   {
-    period: "Hito 3",
-    title: "Revisión de riesgos asociados al uso previo",
+    period: "Durante aproximadamente 3 anos",
+    title: "Tu padre tambien vive contigo",
     description:
-      "Se empieza a separar información útil para una eventual defensa frente a cobros retroactivos de arriendos.",
+      "La ocupacion del departamento incluye convivencia con tu padre durante parte relevante del periodo.",
   },
   {
-    period: "Hito 4",
-    title: "Definición de estrategia siguiente",
+    period: "Durante todo el periodo",
+    title: "Uso conocido por herederos",
     description:
-      "La próxima etapa requiere consolidar cronología, respaldos y puntos de decisión antes de avanzar en venta.",
+      "El uso ha sido conocido por los herederos, sin acuerdos formales, sin cobros y sin oposicion expresa.",
+  },
+  {
+    period: "Actualidad",
+    title: "Intencion de venta sin acuerdos definidos",
+    description:
+      "El departamento sigue en uso y existe intencion de venta, pero aun no hay acuerdos claros entre herederos.",
   },
 ];
 
 const availableDocuments = [
-  "Certificado o antecedente base de posesión efectiva.",
-  "Escritura o información principal del inmueble.",
-  "Boletas, pagos o gastos asociados que puedan servir de contexto.",
-  "Comunicaciones familiares o antecedentes sobre uso del departamento.",
+  "No mencionados claramente en la conversacion base.",
 ];
 
 const missingDocuments = [
-  "Resumen consolidado del estado material actual del inmueble.",
-  "Cronología unificada de uso, gastos y decisiones relevantes.",
-  "Respaldo ordenado de eventuales acuerdos o conversaciones sobre arriendo.",
-  "Listado final de pendientes previos a la venta con responsables.",
+  "Documento de posesion efectiva.",
+  "Acuerdos formales entre herederos.",
+  "Cualquier contrato o autorizacion escrita de uso.",
 ];
 
 const openQuestions = [
-  "¿Qué condiciones mínimas deben cumplirse antes de ofrecer el departamento en venta?",
-  "¿Existe acuerdo suficiente entre herederos sobre momento, precio y forma de venta?",
-  "¿Qué antecedentes respaldan mejor el uso histórico del inmueble y los gastos asociados?",
-  "¿Qué vacíos documentales pueden debilitar una respuesta ante un eventual cobro retroactivo?",
+  "El departamento esta incluido en la posesion efectiva?",
+  "Quien administra formalmente el bien?",
+  "Existe intencion formal de venta por todos los herederos?",
+  "Algun heredero ha planteado cobro, formal o informalmente?",
 ];
 
 const pageStyles: Record<string, CSSProperties> = {
@@ -180,14 +232,22 @@ const pageStyles: Record<string, CSSProperties> = {
     color: "#111827",
   },
   statusValue: {
-    display: "inline-flex",
-    alignItems: "center",
-    padding: "8px 12px",
-    borderRadius: "999px",
-    backgroundColor: "#f4efe5",
-    color: "#5b4633",
-    fontSize: "14px",
-    fontWeight: 700,
+    margin: 0,
+    fontSize: "15px",
+    lineHeight: 1.6,
+    color: "#374151",
+  },
+  groupBlock: {
+    display: "grid",
+    gap: "10px",
+    paddingTop: "18px",
+    borderTop: "1px solid #ece7df",
+  },
+  firstGroupBlock: {
+    display: "grid",
+    gap: "10px",
+    paddingTop: 0,
+    borderTop: "none",
   },
   list: {
     margin: 0,
@@ -251,15 +311,25 @@ const pageStyles: Record<string, CSSProperties> = {
   },
 };
 
-function BulletCard({ title, items }: ChecklistItem) {
+function DetailCardSection({ title, groups }: DetailCard) {
   return (
     <section style={pageStyles.card}>
       <h2 style={pageStyles.sectionTitle}>{title}</h2>
-      <ul style={pageStyles.list}>
-        {items.map((item) => (
-          <li key={item}>{item}</li>
+      <div style={pageStyles.layout}>
+        {groups.map((group, index) => (
+          <div
+            key={group.heading}
+            style={index === 0 ? pageStyles.firstGroupBlock : pageStyles.groupBlock}
+          >
+            <p style={pageStyles.label}>{group.heading}</p>
+            <ul style={pageStyles.list}>
+              {group.items.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
         ))}
-      </ul>
+      </div>
     </section>
   );
 }
@@ -287,7 +357,7 @@ export default function DeptoNunoaPage() {
             <article style={pageStyles.compactCard}>
               <p style={pageStyles.label}>Objetivo principal</p>
               <p style={pageStyles.strongValue}>
-                Preparar el terreno para la venta del departamento.
+                Preparar el terreno para vender el departamento de Nunoa.
               </p>
             </article>
 
@@ -295,13 +365,16 @@ export default function DeptoNunoaPage() {
               <p style={pageStyles.label}>Objetivo complementario</p>
               <p style={pageStyles.strongValue}>
                 Ordenar antecedentes para responder ante un eventual cobro
-                retroactivo de arriendos.
+                retroactivo por uso del inmueble.
               </p>
             </article>
 
             <article style={pageStyles.compactCard}>
               <p style={pageStyles.label}>Estado actual</p>
-              <p style={pageStyles.statusValue}>En analisis</p>
+              <p style={pageStyles.statusValue}>
+                Departamento en uso informal, sin acuerdo escrito entre
+                herederos y sin conflicto activo formalizado.
+              </p>
             </article>
           </section>
 
@@ -309,23 +382,25 @@ export default function DeptoNunoaPage() {
             <article style={pageStyles.card}>
               <h2 style={pageStyles.sectionTitle}>Bloqueo principal</h2>
               <p style={pageStyles.sectionText}>
-                Falta ordenar antecedentes clave para tomar decisiones de venta
-                y evaluar riesgos asociados al uso previo del inmueble.
+                Falta de acuerdo formal entre herederos sobre uso, condiciones y
+                venta del inmueble, sumado a falta de claridad sobre su
+                situacion exacta dentro de la posesion efectiva.
               </p>
             </article>
 
             <article style={pageStyles.card}>
               <h2 style={pageStyles.sectionTitle}>Proximo paso</h2>
               <p style={pageStyles.sectionText}>
-                Consolidar cronologia, documentos y puntos de riesgo para
-                definir estrategia de venta y defensa.
+                Confirmar si el departamento esta incluido en la posesion
+                efectiva y alinear a los herederos hacia una estrategia de
+                venta.
               </p>
             </article>
           </section>
 
           <section aria-label="Preparacion estrategica" style={pageStyles.twoColumnGrid}>
-            <BulletCard {...salePreparation} />
-            <BulletCard {...defensePreparation} />
+            <DetailCardSection {...salePreparation} />
+            <DetailCardSection {...defensePreparation} />
           </section>
 
           <section aria-label="Cronologia del frente" style={pageStyles.card}>
@@ -348,14 +423,14 @@ export default function DeptoNunoaPage() {
             <article style={pageStyles.card}>
               <h2 style={pageStyles.sectionTitle}>Documentos</h2>
 
-              <p style={pageStyles.label}>Disponibles</p>
+              <p style={pageStyles.label}>Disponibles o mencionados</p>
               <ul style={{ ...pageStyles.list, marginBottom: "20px" }}>
                 {availableDocuments.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>
 
-              <p style={pageStyles.label}>Faltantes</p>
+              <p style={pageStyles.label}>Faltantes o pendientes</p>
               <ul style={pageStyles.list}>
                 {missingDocuments.map((item) => (
                   <li key={item}>{item}</li>
