@@ -13,95 +13,101 @@ type TimelineItem = {
 };
 
 const objective =
-  "Comprender el escenario completo, ordenar la regularización pendiente y definir qué hacer con el bien.";
+  "Regularizar y entender el estado completo del terreno de Isla Negra.";
 
 const executiveSummary =
-  "Este frente requiere ordenar antecedentes del inmueble, situación actual, documentos pendientes y puntos de regularización antes de definir una estrategia futura clara.";
+  "Terreno en Isla Negra heredado desde Roberto Pohlhammer. Antes de decidir qué hacer con el bien, es necesario entender su situación completa, especialmente deuda acumulada, contribuciones, gastos asociados y valor real actual. Hoy no existe información suficiente para tomar una decisión bien fundada.";
 
-const currentStatus = "En levantamiento";
+const currentStatus =
+  "Propiedad heredada con porcentajes ya definidos, pero sin tasación actual ni claridad suficiente sobre deuda y situación administrativa.";
 
 const mainBlocker =
-  "Falta consolidar antecedentes del bien, documentos clave y estado de regularización para definir el camino a seguir.";
+  "Falta información concreta sobre deudas, contribuciones, gastos acumulados y valor real del terreno.";
 
 const nextStep =
-  "Ordenar cronología, documentos y pendientes de regularización para preparar una decisión futura sobre el inmueble.";
+  "Realizar una tasación actualizada y determinar la deuda total asociada al bien.";
 
 const assetSituation: ChecklistSection = {
   title: "Situación del bien",
   items: [
-    "Estado general del inmueble en revisión para distinguir condición material, mantenciones pendientes y nivel de uso actual.",
-    "Situación registral por confirmar para validar titularidad, inscripción vigente y antecedentes base del bien.",
-    "Gastos, contribuciones y costos asociados por revisar para entender carga económica real del inmueble.",
-    "Uso actual o situación práctica del bien por levantar para saber quién lo ocupa, cómo se usa y qué restricciones existen.",
+    "Propiedad heredada desde Roberto Pohlhammer.",
+    "Existen porcentajes de herencia ya calculados entre herederos.",
+    "Existen contribuciones y gastos comunes o gastos acumulados asociados al bien, pero el monto exacto todavía no ha sido precisado.",
+    "El estado material, uso práctico y estado de ocupación del terreno no han sido mencionados claramente en la conversación base.",
   ],
 };
 
 const pendingRegularization: ChecklistSection = {
   title: "Regularización pendiente",
   items: [
-    "Roles y antecedentes esenciales por confirmar para consolidar una ficha única del inmueble.",
-    "Documentos faltantes que hoy impiden cerrar una visión completa del frente.",
-    "Situación legal o administrativa pendiente que debe aclararse antes de proyectar cualquier decisión.",
-    "Puntos que requieren validación externa con Conservador, municipalidad, SII u otros actores relevantes.",
+    "Confirmación del rol del terreno.",
+    "Determinar deuda total, valor actual del terreno y estado administrativo concreto del bien.",
+    "Realizar tasación del terreno y revisión de contribuciones.",
+    "Confirmar antecedentes registrales o administrativos y reunir los antecedentes faltantes sobre tasación y deuda.",
   ],
 };
 
 const futureAlternatives: ChecklistSection = {
   title: "Alternativas posibles / decisión futura",
   items: [
-    "Mantener el bien si su uso, costos y viabilidad familiar justifican conservarlo.",
-    "Regularizar y vender una vez que la carpeta del inmueble permita avanzar con menos incertidumbre.",
-    "Negociar entre partes si la mejor salida depende de acuerdos internos más que de una venta inmediata.",
-    "Definir estrategia según costos, viabilidad, tiempos de regularización y nivel de acuerdo entre herederos.",
+    "Regularizar y vender aparece como posibilidad implícita, pero no existe una decisión tomada.",
+    "Mantener el bien no ha sido mencionado expresamente como decisión futura.",
+    "Negociar entre partes no ha sido mencionado expresamente en la conversación base.",
+    "La decisión futura dependerá de la deuda acumulada, la tasación actual del terreno, la situación administrativa y registral, y la viabilidad una vez aclarados costos y cargas.",
   ],
 };
 
 const timeline: TimelineItem[] = [
   {
-    period: "Hito 1",
-    title: "Inicio del levantamiento del frente",
+    period: "2003",
+    title: "Fallece Roberto",
     description:
-      "Se define que Isla Negra debe revisarse primero desde el escenario real del bien antes de tomar decisiones patrimoniales.",
+      "Se divide el bien: 50 por ciento para Hilda y 50 por ciento entre hijos.",
   },
   {
-    period: "Hito 2",
-    title: "Identificación preliminar de antecedentes",
+    period: "2008",
+    title: "Fallece Hilda",
     description:
-      "Se empiezan a reunir datos del inmueble, documentos disponibles y brechas de información relevantes para regularización.",
+      "Su 50 por ciento se reparte entre Christian, Sigfried y Erick, quedando cada uno con aproximadamente 26,6 por ciento.",
   },
   {
-    period: "Hito 3",
-    title: "Ordenamiento de pendientes de regularización",
+    period: "2018",
+    title: "Fallece Sigfried",
     description:
-      "Se separan los puntos registrales, administrativos y documentales que requieren confirmación o gestión externa.",
+      "Su 26,6 por ciento se reparte entre Christian, Erick, Carla y Sven.",
   },
   {
-    period: "Hito 4",
-    title: "Preparación de base para decisión futura",
+    period: "2023",
+    title: "Fallece Erick",
     description:
-      "La siguiente etapa busca dejar una visión consolidada del bien para evaluar mantener, regularizar y vender, o negociar otra salida.",
+      "Su porcentaje se divide entre Veronica y Martin.",
+  },
+  {
+    period: "Actualidad",
+    title: "Necesidad de evaluación del bien",
+    description:
+      "Se reconoce la necesidad de tasar, calcular deudas y evaluar la situación del bien antes de decidir qué hacer con el terreno.",
   },
 ];
 
 const availableDocuments = [
-  "Copia simple de antecedentes base del inmueble para iniciar el levantamiento.",
-  "Información preliminar de ubicación, uso y contexto familiar del bien.",
-  "Notas iniciales sobre situación práctica del inmueble y temas por confirmar.",
-  "Registro de observaciones abiertas para orientar la regularización pendiente.",
+  "No mencionados claramente en la conversación base.",
 ];
 
 const missingDocuments = [
-  "Inscripción vigente y respaldo registral consolidado del inmueble.",
-  "Certificados, roles y antecedentes tributarios actualizados para revisión completa.",
-  "Carpeta ordenada de pagos, contribuciones, gastos y obligaciones asociadas.",
-  "Resumen formal del estado de regularización con vacíos, riesgos y validaciones externas pendientes.",
+  "Tasación actualizada.",
+  "Información precisa sobre contribuciones.",
+  "Información precisa sobre deuda total.",
+  "Confirmación del rol del terreno.",
 ];
 
 const openQuestions = [
-  "¿Cuál es la situación registral exacta del inmueble y qué respaldo falta para confirmarla?",
-  "¿Qué gastos, deudas, contribuciones o costos deben aclararse antes de decidir sobre el bien?",
-  "¿Qué nivel de regularización es necesario para mantener, vender o negociar el inmueble con seguridad?",
-  "¿Qué alternativa parece más razonable una vez que se consoliden documentos, costos y acuerdos entre partes?",
+  "¿Cuál es la deuda total del terreno?",
+  "¿Cuál es el valor real actual del terreno?",
+  "¿Quién administra hoy el bien?",
+  "¿Cuál es el estado actual material del terreno?",
+  "¿Cuál es su situación registral y administrativa exacta?",
+  "¿Qué decisión futura conviene tomar una vez aclarados deuda y valor?",
 ];
 
 const pageStyles: Record<string, CSSProperties> = {
@@ -323,7 +329,7 @@ export default function IslaNegraPage() {
           <section aria-label="Estado, bloqueo y próximo paso" style={pageStyles.statusGrid}>
             <article style={pageStyles.compactCard}>
               <p style={pageStyles.label}>Estado actual</p>
-              <p style={pageStyles.statusValue}>{currentStatus}</p>
+              <p style={pageStyles.strongValue}>{currentStatus}</p>
             </article>
 
             <article style={pageStyles.compactCard}>
